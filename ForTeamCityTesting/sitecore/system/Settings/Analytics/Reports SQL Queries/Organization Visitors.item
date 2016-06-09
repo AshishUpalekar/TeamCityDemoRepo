@@ -1,0 +1,302 @@
+----item----
+version: 1
+id: {DEB0F977-F9B6-41FA-A4A8-F9A7C4312C88}
+database: master
+path: /sitecore/system/Settings/Analytics/Reports SQL Queries/Organization Visitors
+parent: {DAA53CA5-8136-462F-8B2A-F66365BE1238}
+name: Organization Visitors
+master: {00000000-0000-0000-0000-000000000000}
+template: {A90F48C4-4D4F-41D7-8497-070A9A50304E}
+templatekey: ReportQuery
+
+----field----
+field: {A61CC636-3272-4FB6-BCF9-762940047A78}
+name: SqlServer
+key: sqlserver
+content-length: 1322
+
+select * from  
+     (
+    select 
+      [Data].[VisitorId], [Data].[Value], [Data].[Visits], [Data].[Recency], 
+			MAX(CASE WHEN [TagName] = 'Email' THEN [TagValue] ELSE NULL END) [Email],
+			MAX(CASE WHEN [TagName] = 'First Name' THEN [TagValue] ELSE NULL END) [First Name],
+			MAX(CASE WHEN [TagName] = 'Second Name' THEN [TagValue] ELSE NULL END) [Second Name],
+			MAX(CASE WHEN [TagName] = 'Company' THEN [TagValue] ELSE NULL END) [Company],
+			MAX(CASE WHEN [TagName] = 'Organization' THEN [TagValue] ELSE NULL END) [Organization],
+			MAX(CASE WHEN [TagName] = 'Full name' THEN [TagValue] ELSE NULL END) [Full name],
+			MAX(CASE WHEN [TagName] = 'StateProvince' THEN [TagValue] ELSE NULL END) [StateProvince]
+			from		    
+	    (
+				select	top 20
+				  [Visits].[VisitorId],
+				  SUM([Visits].[Value]) as [Value],
+				  COUNT([Visits].[VisitId]) as [Visits],
+				  MAX([Visits].[StartDateTime]) as [Recency]
+				from
+				  [Visits] 
+				where 
+				  [Visits].[LocationId]=@LocationId
+				group by
+				  [Visits].[VisitorId]
+				order by
+				  [Recency] desc,
+				  [Value] desc/*;*/
+		 ) [Data] 
+     left join 
+       [VisitorTags] on [VisitorTags].[VisitorId] = [Data].[VisitorId]
+     group by
+       [Data].[VisitorId], [Data].[Value], [Data].[Visits], [Data].[Recency]
+	) pvt
+
+----field----
+field: {E6A8E2B9-2111-40A2-B4AC-88A607E68307}
+name: Oracle
+key: oracle
+content-length: 1311
+
+SELECT *
+FROM
+  (
+    SELECT
+      "VISITS"."VISITORID",
+      SUM("VISITS"."VALUE") as "VALUE",
+      COUNT("VISITS"."VISITID") AS "VISITS",
+      MAX("VISITS"."STARTDATETIME") AS "RECENCY"
+    FROM
+      "VISITS"
+    WHERE 
+      "VISITS"."LOCATIONID" = '838dd15e-ecbb-21e4-f10a-18668f97c60c'
+    GROUP BY 
+      "VISITS"."VISITORID"
+    ORDER BY
+      "RECENCY" DESC,
+      "VALUE" desc
+  ) D
+  LEFT OUTER JOIN
+  (
+    SELECT
+        "VISITORID",
+        MAX(CASE WHEN "TAGNAME" = 'Email' THEN TO_CHAR("TAGVALUE") ELSE NULL END) "EMAIL",
+        MAX(CASE WHEN "TAGNAME" = 'First Name' THEN TO_CHAR("TAGVALUE") ELSE NULL END) "FIRST NAME",
+        MAX(CASE WHEN "TAGNAME" = 'Second Name' THEN TO_CHAR("TAGVALUE") ELSE NULL END) "SECOND NAME",
+        MAX(CASE WHEN "TAGNAME" = 'Company' THEN TO_CHAR("TAGVALUE") ELSE NULL END) "COMPANY",
+        MAX(CASE WHEN "TAGNAME" = 'Organization' THEN TO_CHAR("TAGVALUE") ELSE NULL END) "ORGANIZATION",
+        MAX(CASE WHEN "TAGNAME" = 'Full name' THEN TO_CHAR("TAGVALUE") ELSE NULL END) "FULL NAME",
+        MAX(CASE WHEN "TAGNAME" = 'StateProvince' THEN TO_CHAR("TAGVALUE") ELSE NULL END) "STATEPROVINCE"
+    FROM
+        "VISITORTAGS"
+    GROUP BY
+        "VISITORID"
+  ) PVT ON D."VISITORID" = PVT."VISITORID"
+WHERE ROWNUM <= 20
+
+----version----
+language: da
+version: 1
+revision: aa69c13f-a8df-477c-85ff-1b88b5503410
+
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 22
+
+Organisationsbesøgende
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 34
+
+20140228T205922:635292179629073009
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+aa69c13f-a8df-477c-85ff-1b88b5503410
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140228T205922:635292179629073009
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: de-DE
+version: 1
+revision: fd5bbc29-7c1f-45f3-bb59-e23ea3111714
+
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 21
+
+Organisation Besucher
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 34
+
+20140228T205027:635292174279905544
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fd5bbc29-7c1f-45f3-bb59-e23ea3111714
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140228T205027:635292174279905544
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: en
+version: 1
+revision: 27772c2d-2410-4018-b321-e156c6f9226a
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20110211T145814
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+27772c2d-2410-4018-b321-e156c6f9226a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20111213T023111:634593402719673881
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: ja-JP
+version: 1
+revision: 6a056d63-6503-4e16-812a-ffc68f2b48e1
+
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 7
+
+組織のビジター
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 34
+
+20140228T210909:635292185491055025
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6a056d63-6503-4e16-812a-ffc68f2b48e1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140228T210909:635292185491055025
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

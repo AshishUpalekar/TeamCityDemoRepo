@@ -1,0 +1,283 @@
+----item----
+version: 1
+id: {60ED7346-36FF-46D5-B2D2-59D6BCBA6276}
+database: master
+path: /sitecore/system/Settings/Analytics/Visitor Identifications/050 - Supplier
+parent: {C0BE89B5-4061-4276-9C4F-569EDC4EEF06}
+name: 050 - Supplier
+master: {00000000-0000-0000-0000-000000000000}
+template: {8AAD3A0B-C9A6-4DA7-AB73-A54DF249B73D}
+templatekey: Visitor Identification
+
+----field----
+field: {77540987-B38F-453D-B0A1-7AD7E3ED15C1}
+name: Value
+key: value
+content-length: 2
+
+50
+----version----
+language: da
+version: 1
+revision: 026754fc-0d13-4e07-a3d8-4895fc668026
+
+----field----
+field: {25C5D410-9DA9-42AE-90CD-B727BA47E1C5}
+name: Header
+key: header
+content-length: 10
+
+Leverandør
+----field----
+field: {25FBD522-8BD6-4281-85AD-A14217A5A739}
+name: Description
+key: description
+content-length: 31
+
+Den besøgende er en leverandør.
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 16
+
+050 - Leverandør
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 34
+
+20140228T205508:635292177087530635
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+026754fc-0d13-4e07-a3d8-4895fc668026
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140228T205508:635292177087999376
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: de-DE
+version: 1
+revision: 50a9330b-faa2-43da-a553-6e7e72b70953
+
+----field----
+field: {25C5D410-9DA9-42AE-90CD-B727BA47E1C5}
+name: Header
+key: header
+content-length: 9
+
+Lieferant
+----field----
+field: {25FBD522-8BD6-4281-85AD-A14217A5A739}
+name: Description
+key: description
+content-length: 31
+
+Der Besucher ist ein Lieferant.
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 15
+
+050 - Lieferant
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 34
+
+20140228T204502:635292171023383348
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+50a9330b-faa2-43da-a553-6e7e72b70953
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140228T204502:635292171023539597
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: en
+version: 1
+revision: e222d2e5-3ab2-4085-b643-a3bd64af0d0f
+
+----field----
+field: {25C5D410-9DA9-42AE-90CD-B727BA47E1C5}
+name: Header
+key: header
+content-length: 8
+
+Supplier
+----field----
+field: {25FBD522-8BD6-4281-85AD-A14217A5A739}
+name: Description
+key: description
+content-length: 26
+
+The visitor is a supplier.
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20090116T115405
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e222d2e5-3ab2-4085-b643-a3bd64af0d0f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20090116T115750:633677038700109691
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: ja-JP
+version: 1
+revision: c6ae2646-34fe-4021-b8a8-d69600e87e75
+
+----field----
+field: {25C5D410-9DA9-42AE-90CD-B727BA47E1C5}
+name: Header
+key: header
+content-length: 6
+
+サプライヤー
+----field----
+field: {25FBD522-8BD6-4281-85AD-A14217A5A739}
+name: Description
+key: description
+content-length: 11
+
+ビジターがサプライヤー
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 12
+
+050 - サプライヤー
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 34
+
+20140228T210358:635292182381555023
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c6ae2646-34fe-4021-b8a8-d69600e87e75
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140228T210358:635292182381867521
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
